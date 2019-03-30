@@ -22,13 +22,42 @@ span.removed{
 
 section{
   padding:5px;
-  margin-bottom:10px;
+  margin-top:10px;
 }
 
 section:nth-child(even){
-  background-color: lightcyan;
+  background-color: rgba(190, 212, 111, 0.418);
 }
 
 section:nth-child(odd){
-  background-color: ivory;
+  background-color: rgba(164, 231, 194, 0.836);
+}
+
+section:first-child{
+  background-color: white;
+}
+
+ul#cssList{
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  padding-left: 0;
+  display:flex;
+  flex-direction: column;
+  color:white;
+  margin:0;
+}
+ul#cssList li a{  
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  color:pink;
+  font-weight: bolder;  
+}
+
+ul#cssList li{
+  font-weight: lighter;  
+  background-color: crimson;
+  margin-bottom:5px;
+  padding-left:15px;
+  height:60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

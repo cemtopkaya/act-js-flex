@@ -1,19 +1,21 @@
 <section>
-  <ul>
+  <ul id="cssList">
     <li>
-      <a href="#flex">display:flex</a>
+      <div><a href="#flex">display</a></div>
+      flex
     </li>
     <li>
-      <a href="#flexContent">
-        justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly
-      </a>
+      <div><a href="#flexContent">justify-content</a></div>      
+       flex-start | flex-end | center | space-between | space-around | space-evenly
     </li>    
   
     <li>
-      <a href="#flexWrap">flex-wrap: nowrap | wrap | wrap-reverse</a>
+      <div><a href="#flexWrap">flex-wrap</a></div>
+      nowrap | wrap | wrap-reverse
     </li>
     <li>
-      <a href="#flexGrowWrap">flex-grow:[sayı]</a>
+      <div><a href="#flexGrowWrap">flex-grow</a></div>
+      sayı alır
     </li>
   </ul>
 </section>
@@ -50,7 +52,7 @@
   <pre>
     #flex>div{
         border:1px solid black;
-        <span class="added">display:flex;</span>
+        <span class="added bold">display:flex;</span>
       }
 
     #flex>div>div{
@@ -93,7 +95,7 @@
     </a>:flex-end
   </h2>
   <p>
-    <img src="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg" alt="justify-content">
+    <!-- <img src="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg" alt="justify-content"> -->
     <pre>justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly</pre>
   </p>
   <pre>
@@ -115,7 +117,7 @@
     #justifyContent>div{
       border:1px solid black;
       display:flex;
-      justify-content:flex-end;
+      justify-content:flex-start;
     }
 
     #justifyContent>div>div{
@@ -126,6 +128,13 @@
       text-align:center;
     }
   </style>
+  justify-content:
+  <input type="radio" name="justify-content" value="flex-start" checked>flex-start
+  <input type="radio" name="justify-content" value="flex-end" >flex-end
+  <input type="radio" name="justify-content" value="center" >center
+  <input type="radio" name="justify-content" value="space-between" >space-between
+  <input type="radio" name="justify-content" value="space-around" >space-around
+  <input type="radio" name="justify-content" value="space-evenly" >space-evenly
   <div>
     <div>1</div>
     <div>2</div>
