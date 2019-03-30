@@ -1,0 +1,342 @@
+<section>
+  <ul>
+    <li>
+      <a href="#flex">display:flex</a>
+    </li>
+    <li>
+      <a href="#flexContent">
+        justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly
+      </a>
+    </li>    
+  
+    <li>
+      <a href="#flexWrap">flex-wrap: nowrap | wrap | wrap-reverse</a>
+    </li>
+    <li>
+      <a href="#flexGrowWrap">flex-grow:[sayı]</a>
+    </li>
+  </ul>
+</section>
+
+<section id="normal">
+  <h2>div: width, height:100px</h2>
+  <style>
+    #normal>div {
+      border: 1px solid black;
+    }
+
+    #normal>div>div {
+      border: 1px solid red;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      text-align:center;
+    }
+  </style>
+
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</section>
+
+
+
+<section id="flex">
+  <a href="#flex"></a>
+  <h2>display:flex</h2>
+  <pre>
+    #flex>div{
+        border:1px solid black;
+        <span class="added">display:flex;</span>
+      }
+
+    #flex>div>div{
+        border:1px solid red;
+        width:100px;
+        height:100px;
+        margin:5px;
+        text-align:center;
+    }
+  </pre>
+  <style>
+    #flex>div {
+      border: 1px solid black;
+      display: flex;
+    }
+
+    #flex>div>div {
+      border: 1px solid red;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      text-align:center;
+    }
+  </style>
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</section>
+
+
+
+<section id="justifyContent">  
+  <a href="#flexContent"></a>
+  <h2>
+    <a href="https://css-tricks.com/almanac/properties/j/justify-content/" target="_blank">
+      justify-content
+    </a>:flex-end
+  </h2>
+  <p>
+    <img src="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg" alt="justify-content">
+    <pre>justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly</pre>
+  </p>
+  <pre>
+    #justifyContent>div{
+      border:1px solid black;
+      <span class="added">display:flex;</span>
+      <span class="added">justify-content:flex-end;</span>
+    }
+
+    #justifyContent>div>div{
+      border:1px solid red;
+      width:100px;
+      height:100px;
+      margin:5px;
+      text-align:center;
+    }
+  </pre>
+  <style>
+    #justifyContent>div{
+      border:1px solid black;
+      display:flex;
+      justify-content:flex-end;
+    }
+
+    #justifyContent>div>div{
+      border:1px solid red;
+      width:100px;
+      height:100px;
+      margin:5px;
+      text-align:center;
+    }
+  </style>
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</section>
+
+
+<section id="flexWrap">
+  <h2>
+    <a href="https://css-tricks.com/almanac/properties/f/flex-wrap/" target="_blank">
+      flex-wrap
+    </a>: nowrap | wrap | wrap-reverse
+  </h2>
+
+  <p>
+    <a href="https://prepen.io/team/css-tricks/pen/1ea1ef35d942d0041b0467b4d39888d3">Örnek Kod</a>
+  </p>
+  <pre>
+    #flexWrap>div{
+      border:1px solid black;
+      <span class="added">display:flex;</span>
+      <span class="added">flex-wrap:wrap-reverse;</span>
+      <span class="added">width:380px;</span>
+    }
+
+    #flexWrap>div>div{
+      border:1px solid red;
+      width:100px;
+      height:100px;
+      margin:5px;
+      text-align:center;
+    }
+  </pre>
+  <style>
+    #flexWrap>div{
+      border:1px solid black;
+      display:flex;
+      flex-wrap:wrap-reverse;
+      width:380px;
+    }
+
+    #flexWrap>div>div{
+      border:1px solid red; 
+      width:100px; 
+      height:100px;
+      margin:5px;
+      text-align:center;
+    }
+  </style>
+  flex-wrap:
+  <input type="radio" name="flexGrow_wrap" value="wrap" checked>WRAP
+  <input type="radio" name="flexGrow_wrap" value="nowrap" >NO-WRAP
+  <input type="radio" name="flexGrow_wrap" value="wrap-reverse" >WRAP-REVERSE
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</section>
+
+
+<section id="flexGrow">
+  <a href="#flewGrow"></a>
+  <h2>
+    <a href="https://css-tricks.com/almanac/properties/f/flex-wrap/" target="_blank">
+      flex-grow
+    </a>:[sayı] -birim yok!-
+  </h2>
+
+  <p class="flex-grow">
+    <h4><a href="https://css-tricks.com/almanac/properties/f/flex-grow/">flex-grow</a></h4>
+    Birimsiz, sadece sayı alır. Diğer elemanların flex-grow değerlerine bakarak
+    satırda bulunacak elemanları oranlayıp genişliklerini ayarlar.
+  </p>
+  <pre>
+    #flexGrow>div{
+      border:1px solid black;
+      <span class="added">display:flex;</span>
+      <span class="added">width:380px;</span>
+    }
+
+    #flexGrow>div>div{
+      <span class="added">flex-grow:1;</span>
+      border:1px solid red;
+      width:100px;
+      height:100px;
+      margin:5px;
+    }
+  </pre>
+  <style>
+    #flexGrow>div{
+      border:1px solid black;
+      display:flex;
+      flex-wrap:wrap-reverse;
+      width:380px;
+    }
+
+    #flexGrow>div>div{
+      flex-grow:1;
+      border:1px solid red;
+      /**
+      * flex-grow:1 olduğu için hepsi eşit olarak yer kaplayacak 
+      * ANCAK 100px den daha küçülmesi gerekirse wrap-reverse çalışacak 
+      */    
+      width:100px; 
+      height:100px;
+      margin:5px;
+      text-align:center;
+    }
+  </style>
+  <div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</section>
+
+
+<section id="flexGrowWrap">
+  <a href="#flexGrowWrap"></a>
+  <h2>Grow ve Wrap ile çeşitli boyutlarda kardeşler</h2>
+  <p>
+    Hem flex-grow hem flex-wrap işleniyor burada.
+  <pre>flex-wrap: nowrap | wrap | wrap-reverse</pre>
+  </p>
+  <pre>
+    #flexGrowWrap>div{
+      border:1px solid black;
+      display:flex;
+    }
+
+    #flexGrowWrap>div>div{
+      <span class="added">flex-grow:1;</span>
+      border:1px solid red;
+      /**
+      * flex-grow:1 olduğu için hepsi eşit olarak yer kaplayacak 
+      * ANCAK her biri için width değeri 50px'e gelince 
+      * flex-grow değerleri dikkate alınmayacak wrap çalışacak.
+      * 
+      * <span class="bold">flex-wrap:wrap OLUNCA:</span>
+      * width:50px ve ayrıca border kalınlıkları dahil edildiğinde 52px 
+      * genişliğine kadar gerileyecek ve daha fazla daraldığı anda wrap olacak.
+      *
+      * Neden 52?
+      *   width+(border-left-width+border-right-width)
+      *
+      * Yeni bir satıra wrap olduğu için sonuncu elemanı alt satıra atacak
+      * ve flex-grow:1 olduğu için yeni satırı daha fazla daralıncaya kadar 
+      * sonuncu eleman kaplayacak.
+      * 
+      * <span class="bold">flex-wrap:wrap-reverse OLUNCA:</span>
+      * wrap ile en sondaki elemanı <span class="bold">ALT</span> satırda tutacakken, 
+      * wrap-reverse seçilmişse, son elemanı <span class="bold">ÜST</span> satırda tutacak
+      * ve flex-grow:1 olduğu için yeni satırdan sıralamaya başlıyor gibi
+      * elemanları dizip daha fazla daralıncaya kadar 3. satırı oluşturmayacak.
+      *
+      * <span class="bold">flex-wrap:nowrap OLUNCA:</span>
+      * Tüm elemanlar 52px den sonra aynı genişlikle daralırlar.
+      * Div içerikleri sıkışacakları max seviyeye kadar sıkışır.
+      */
+      <span class="added bold">width:50px;</span>
+      height:100px;
+      margin:5px;
+      text-align:center;
+    }
+
+    #flexGrowWrap>div>div:first-child{
+      <span class="added">flex-grow:2;</span>
+    }
+    #flexGrowWrap>div>div:nth-child(3){
+      <span class="added">flex-grow:4;</span>
+    }
+  </pre>
+  <style>
+    #flexGrowWrap>div{
+      border:1px solid black;
+      display:flex;
+      flex-wrap:wrap;
+    }
+
+    #flexGrowWrap>div>div{
+      flex-grow:1;
+      border:1px solid red;
+      width:50px;
+      height:100px;
+      margin:5px;
+      text-align:center;
+    }
+
+    #flexGrowWrap>div>div:first-child{
+      flex-grow:2;
+    }
+    #flexGrowWrap>div>div:nth-child(3){
+      flex-grow:4;
+    }
+  </style>
+  flex-wrap:
+  <input type="radio" name="flexGrow_wrap" value="wrap" checked>WRAP
+  <input type="radio" name="flexGrow_wrap" value="nowrap" >NO-WRAP
+  <input type="radio" name="flexGrow_wrap" value="wrap-reverse" >WRAP-REVERSE
+  <input type="range" min="1" max="100" value="100" style="width:100%" id="myRange">
+  <div>
+    <div>1<span></span></div>
+    <div>2<span></span></div>
+    <div>3<span></span></div>
+    <div>4<span></span></div>
+    <div>5<span></span></div>
+    <div>6<span></span></div>
+  </div>
+</section>

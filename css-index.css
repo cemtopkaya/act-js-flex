@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+html,body{  
+  margin:0;
+}
+
+span.added{
+  color:green;
+}
+span.bold{
+  font-weight: bolder;
+}
+
+span.removed{
+  color:red;
+  text-decoration:line-through;
+}
+
+section{
+  padding:5px;
+  margin-bottom:10px;
+}
+
+section:nth-child(even){
+  background-color: lightcyan;
+}
+
+section:nth-child(odd){
+  background-color: ivory;
+}
