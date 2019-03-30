@@ -1,29 +1,41 @@
 // Import stylesheets
 import './css-flex-wrap.css';
 import './css-index.css';
+import './css-animation.css';
 import './style.css';
 import $ from 'jquery';
 
-function sectionFlexWrap() {
-  const sectionIdFlexWrap = "#flexWrap",
-    sectionFlexWrap = document.querySelector(sectionIdFlexWrap),
-    flexGrow_wrap_RGs = sectionFlexWrap.querySelectorAll("input[type='radio']"),
-    divContainer = sectionFlexWrap.querySelector("div"),
-    fnWrapOnChange = (evt) => {
-      console.log(evt.target.value)
-      divContainer.style["flex-wrap"] = evt.target.value
-      let innerHTML = sectionFlexWrap.querySelector("pre").innerHTML ;      
-      const newWrap = innerHTML.replace(/flex-wrap:(.*?;)/,'flex-wrap:'+evt.target.value+';')
-      sectionFlexWrap.querySelector("pre").innerHTML = newWrap
-      $(sectionFlexWrap.querySelector("pre span:nth-child(2)")).effect("highlight", {}, 3000);
-    };
+function sectionSpanCssChanged(sectionId = "section#flexWrap", cssProp = "flex-wrap") {
+  const section = document.querySelector(sectionId),
+    divContainer = section.querySelector("div"),
+    radios = section.querySelectorAll("input[type='radio']"),
+    pre = section.querySelector("pre"),
+    onChange = (evt) => {
+      
+console.log("span")
+      divContainer.style[cssProp] = evt.target.value
+      let regexp = new RegExp(cssProp + ":(.*?;)"),
+        spans = section.querySelectorAll("pre span"),
+        span = Array.from(spans)
+          .find(span => span.innerText.indexOf(cssProp) > -1),
+        newWrap = span.innerText.replace(regexp, cssProp + ':' + evt.target.value + ';'),
+        newCssValue = "newCssValue"
 
-  flexGrow_wrap_RGs.forEach(r => {
-    r.addEventListener('change', fnWrapOnChange, false)
+      span.innerHTML = newWrap
+      if (span.classList.contains(newCssValue)) {
+        span.classList.toggle(newCssValue);
+      }
+
+      setTimeout(() => span.classList.add(newCssValue), 1)
+    }
+console.log(radios)
+  radios.forEach(r => {
+    r.addEventListener('change', onChange)
   })
-
 }
-function sectionFlexGrowWrap() {
+
+
+function section_flexGrowWrap() {
   const sectionIdFlexGrowWrap = "#flexGrowWrap";
   let flexGrowSlider,
     sectionFlexGrow,
@@ -39,6 +51,7 @@ function sectionFlexGrowWrap() {
       let fnWrapOnChange = function (evt) {
         let divContainer = document.querySelector(sectionIdFlexGrowWrap + ">div");
         divContainer.style["flex-wrap"] = evt.target.value;
+        sectionSpanCssChanged("flexGrowWrap", "flex-wrap");
       };
 
       flexGrow_wrap_RGs.forEach(r => {
@@ -51,6 +64,7 @@ function sectionFlexGrowWrap() {
       let onInput = function () {
         var div = sectionFlexGrow.querySelector("div");
         div.style.width = flexGrowSlider.value / 10 + "%";
+        sectionSpanCssChanged("flexGrowWrap", "width");
 
         var divs = document.querySelectorAll(sectionIdFlexGrowWrap + ">div>div");
         divs.forEach(div => {
@@ -66,6 +80,23 @@ function sectionFlexGrowWrap() {
     }
   }
 }
+// section_flexGrowWrap()
 
-sectionFlexGrowWrap();
-sectionFlexWrap();
+function section_flexWrap() {
+
+  const section = document.querySelector("section#flexWrap"),
+    flexWrap_radios = section.querySelectorAll("input[type='radio']"),
+    fnWrapOnChange = function (evt) {
+      let divContainer = section.querySelector("div");
+      divContainer.style["flex-wrap"] = evt.target.value;
+      sectionSpanCssChanged("section#flexGrowWrap", "flex-wrap");
+    };
+
+  flexWrap_radios.forEach(r => {
+    r.addEventListener('change', fnWrapOnChange, false)
+  })
+}
+//section_flexWrap()
+
+sectionSpanCssChanged("section#flexWrap", "flex-wrap");
+sectionSpanCssChanged("section#flexGrowWrap", "flex-wrap");

@@ -1,0 +1,27 @@
+pre span{  
+  transition:color .5s ease-in, transform 1s 1s ease-out;
+}
+
+.newCssValue{
+  animation-name:newCssValue;
+  /* Animasyon 1saniye sonra başlayacak */
+  animation-delay: 1s;
+  /* Animasyon toplam 2saniye sürecek */
+  animation-duration:2s;
+
+  animation-timing-function: ease-in;
+  /* animation-iteration-count: infinite; */
+  animation-fill-mode: forwards;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes newCssValue1{
+  from { transform:scale(1);}
+  to {color:red;transform:scale(1.3);}
+}
+
+@keyframes newCssValue{
+  0% { color:blue;transform:scale(1);}
+  50% {color:red;transform:rotate(2turn) scale(2);}
+  100% {color:aquamarine;transform:scale(1) ;}
+}

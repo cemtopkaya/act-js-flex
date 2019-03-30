@@ -4,6 +4,10 @@ html,body{
   margin:0;
 }
 
+pre span{  
+  display : inline-block;
+}
+
 span.added{
   color:green;
 }

@@ -178,9 +178,9 @@
     }
   </style>
   flex-wrap:
-  <input type="radio" name="flexGrow_wrap" value="wrap" checked>WRAP
-  <input type="radio" name="flexGrow_wrap" value="nowrap" >NO-WRAP
-  <input type="radio" name="flexGrow_wrap" value="wrap-reverse" >WRAP-REVERSE
+  <input type="radio" name="flex-wrap" value="wrap" checked>WRAP
+  <input type="radio" name="flex-wrap" value="nowrap" >NO-WRAP
+  <input type="radio" name="flex-wrap" value="wrap-reverse" >WRAP-REVERSE
   <div>
     <div>1</div>
     <div>2</div>
@@ -259,6 +259,7 @@
     #flexGrowWrap>div{
       border:1px solid black;
       display:flex;
+      <span class="added">flex-wrap:wrap;</span>
     }
 
     #flexGrowWrap>div>div{
