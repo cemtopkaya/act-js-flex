@@ -37,6 +37,16 @@ section:first-child{
   background-color: white;
 }
 
+section div>div{
+  font-size:250%;
+}
+section div>div:nth-child(2n){
+  background-color:rgb(143, 48, 48);
+}
+section div>div:nth-child(2n+1){
+  background-color:pink;
+}
+
 ul#cssList{
   font-family: 'Arial Narrow', Arial, sans-serif;
   padding-left: 0;
